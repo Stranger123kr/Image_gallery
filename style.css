@@ -1,0 +1,247 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+img,
+button,
+a,
+i {
+  cursor: pointer;
+}
+
+input,
+button,
+i {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* ======================= This is a search part ======================= */
+
+.search {
+  height: 18rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.search .content {
+  position: relative;
+  color: #fff;
+}
+
+.search h1 {
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+.search p {
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.search .search_box {
+  margin-top: 2rem;
+  background: #ccc;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+}
+
+.search .search_box i {
+  font-size: 1.2rem;
+}
+
+.search_box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-left: 0.8rem;
+  width: 90%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* ======================= This is a Image_Gallery part ======================= */
+
+.gallery {
+  padding: 1rem 1rem;
+}
+
+.gallery .images {
+  columns: 5 350px;
+  column-gap: 0.8rem;
+}
+
+.images .card {
+  display: flex;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.images .card .details {
+  position: absolute;
+  bottom: -6rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  width: 100%;
+  padding: 1rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: bottom 0.3s ease;
+}
+
+.images .card:hover .details {
+  bottom: 0;
+}
+
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
+}
+
+.card .details .photographer span {
+  font-size: 1.05rem;
+}
+
+.card .details button {
+  padding: 0.3rem 0.6rem;
+  background: #fff;
+}
+
+/* .gallery .load_more {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background: #353b48;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+  border-radius: 3rem;
+} */
+
+.gallery .load_more {
+  display: block;
+  padding: 1.1rem 1.1rem;
+  border: 3px solid #fff;
+  border-top: 3px solid #545454;
+  border-right: 3px solid #545454;
+  border-radius: 50%;
+  animation: loading 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+  background: #fff;
+  margin: 2.1rem auto;
+  opacity: 0;
+}
+.gallery .load_more.disable {
+  opacity: 1;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ======================= This is a Image_Gallery pop light_box part ======================= */
+
+.light_box {
+  position: fixed;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.light_box .wrapper {
+  width: 100%;
+  max-width: 850px;
+  background: #fff;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.4rem;
+}
+
+.preview_img {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.wrapper .preview_img .img {
+  max-height: 100vh;
+  max-width: 50vh;
+}
+
+.wrapper header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .photographer {
+  color: #333;
+}
+
+header .photographer i {
+  font-size: 1.5rem;
+}
+header .photographer span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 0.2rem;
+}
+
+header .buttons i {
+  padding: 0.5rem 0.8rem;
+  background: #8c72f7;
+  margin-left: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+header .buttons i:last-child {
+  background: #555;
+}
+
+.preview_img .img img {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}

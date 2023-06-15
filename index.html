@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image_Gallery App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn0.iconfinder.com/data/icons/3d-user-interface-1/256/image.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <!-- ======================= This is a lightbox part ======================= -->
+
+    <div class="light_box">
+      <div class="wrapper">
+        <header>
+          <div class="photographer">
+            <i class="uil uil-camera"></i>
+            <span>Maria Rose</span>
+          </div>
+          <div class="buttons">
+            <i class="uil uil-import"></i>
+            <i class="uil uil-times"></i>
+          </div>
+        </header>
+        <div class="preview_img">
+          <div class="img">
+            <img src="images/img-4.jpg" alt="image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= This is a search part ======================= -->
+
+    <section class="search">
+      <img src="images/search-img.jpg" alt="search" />
+      <div class="content">
+        <h1>Image Gallery with JavaScript</h1>
+        <p>Search and Download any images within a second</p>
+        <div class="search_box">
+          <i class="uil uil-search"></i>
+          <input type="text" autocomplete="off" placeholder="Search images" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= This is a Image_Gallery part ======================= -->
+
+    <section class="gallery">
+      <ul class="images">
+        <!-- all images are entering form api -->
+      </ul>
+      <button class="load_more"></button>
+    </section>
+  </body>
+</html>

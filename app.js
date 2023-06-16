@@ -45,7 +45,7 @@ GetImages(
 
 window.addEventListener("scroll", () => {
   if (
-    window.document.documentElement.offsetHeight - window.innerHeight <=
+    window.document.documentElement.offsetHeight - window.innerHeight - 200 <=
     window.scrollY
   ) {
     LoadMore_Images();
@@ -53,9 +53,8 @@ window.addEventListener("scroll", () => {
 });
 
 const LoadMore_Images = () => {
-  let api_url = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${
-    perPage * currentPage++
-  }`;
+  currentPage++;
+  let api_url = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`;
   GetImages(api_url);
 };
 

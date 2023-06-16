@@ -5,6 +5,7 @@ let scrolling = 800;
 
 const imagesWrapper = document.querySelector(".images");
 const load_more = document.querySelector(".load_more");
+const scroll_top_up = document.querySelector("#scroll_top_up");
 
 // ====================== this is a function for iterate for very images and other details  =================
 const Generate_HTML = (images) => {
@@ -45,6 +46,12 @@ GetImages(
 // ====================== this is a load more images function  =================
 
 window.addEventListener("scroll", () => {
+  window.scrollY > 500 // this is top up page effect for user
+    ? (scroll_top_up.style.display = "block")
+    : (scroll_top_up.style.display = "none");
+
+  // this is a Infinity scroll effect for get data -----------
+
   if (
     window.document.documentElement.offsetHeight -
       window.innerHeight -
@@ -60,3 +67,12 @@ const LoadMore_Images = () => {
   let api_url = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`;
   GetImages(api_url);
 };
+
+// ---------------  this is top up page effect event for user
+
+scroll_top_up.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

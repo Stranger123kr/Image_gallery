@@ -34,9 +34,9 @@ i {
   background: #fff;
   top: 50%;
   right: 2rem;
-  opacity: 0.5;
+  opacity: 0.4;
   display: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 
 #scroll_top_up:hover {

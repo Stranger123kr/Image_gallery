@@ -1,6 +1,7 @@
 const api_key = "H7KKJdfwgRTFmX6Xv5AkctNMBWi8Z3zwE9MHKovzogBFPc53XfbWQelq ";
 let perPage = 9;
 let currentPage = 1;
+let scrolling = 800;
 
 const imagesWrapper = document.querySelector(".images");
 const load_more = document.querySelector(".load_more");
@@ -45,7 +46,9 @@ GetImages(
 
 window.addEventListener("scroll", () => {
   if (
-    window.document.documentElement.offsetHeight - window.innerHeight - 200 <=
+    window.document.documentElement.offsetHeight -
+      window.innerHeight -
+      scrolling++ <=
     window.scrollY
   ) {
     LoadMore_Images();

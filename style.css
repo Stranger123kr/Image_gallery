@@ -26,6 +26,23 @@ i {
 
 /* ======================= This is a search part ======================= */
 
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #545454;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* ======================= This is a search part ======================= */
+
 .search {
   height: 30rem;
   position: relative;
@@ -249,6 +266,9 @@ header .buttons i:last-child {
 /* ======================= This is a media query ======================= */
 
 @media (max-width: 768px) {
+  .images .card .details {
+    display: none;
+  }
   .search .content {
     flex-basis: 80%;
   }
@@ -268,27 +288,6 @@ header .buttons i:last-child {
   .gallery .images {
     columns: 5 150px;
     column-gap: 0.3rem;
-  }
-
-  .images .card .details {
-    padding: 1rem 0.6rem;
-  }
-
-  .photographer i {
-    font-size: 1.1rem;
-    margin-right: 0.9rem;
-  }
-
-  .card .details .photographer span {
-    font-size: 0.6rem;
-  }
-
-  .card .details button {
-    padding: 0.1rem 0.4rem;
-  }
-
-  .details button i {
-    font-size: 0.6rem;
   }
 
   .gallery .load_more {

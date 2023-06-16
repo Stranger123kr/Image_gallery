@@ -27,7 +27,7 @@ i {
 /* ======================= This is a search part ======================= */
 
 .search {
-  height: 18rem;
+  height: 30rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -248,8 +248,66 @@ header .buttons i:last-child {
 
 /* ======================= This is a media query ======================= */
 
+@media (max-width: 768px) {
+  .search .content {
+    flex-basis: 80%;
+  }
+
+  .search p {
+    text-align: left;
+  }
+}
+
+/* =============================  576px */
+
 @media (max-width: 576px) {
+  .gallery {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .gallery .images {
+    columns: 5 150px;
+    column-gap: 0.3rem;
+  }
+
+  .images .card .details {
+    padding: 1rem 0.6rem;
+  }
+
+  .photographer i {
+    font-size: 1.1rem;
+    margin-right: 0.9rem;
+  }
+
+  .card .details .photographer span {
+    font-size: 0.6rem;
+  }
+
+  .card .details button {
+    padding: 0.1rem 0.4rem;
+  }
+
+  .details button i {
+    font-size: 0.6rem;
+  }
+
   .gallery .load_more {
     display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .search h1 {
+    font-size: 2rem;
+  }
+  .search p {
+    font-size: 1rem;
+  }
+  .search .search_box {
+    padding: 0.8rem 0.8rem;
+  }
+  .search_box input {
+    width: 70%;
+    font-size: 0.8rem;
   }
 }

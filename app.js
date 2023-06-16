@@ -57,5 +57,3 @@ const LoadMore_Images = () => {
   let api_url = `https://api.pexels.com/v1/curated?page=${currentPage}&per_page=${perPage}`;
   GetImages(api_url);
 };
-
-// load_more.addEventListener("click", LoadMore_Images);

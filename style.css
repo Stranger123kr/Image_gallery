@@ -159,10 +159,10 @@ i {
   animation: loading 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
   background: #fff;
   margin: 2.1rem auto;
-  opacity: 0;
+  visibility: hidden;
 }
 .gallery .load_more.disable {
-  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes loading {
@@ -245,3 +245,8 @@ header .buttons i:last-child {
   object-fit: contain;
   border-radius: 5px;
 }
+
+/* ======================= This is a media query ======================= */
+
+/* @media (max-width: 576px) {
+} */

@@ -22,28 +22,18 @@ const Generate_HTML = (images) => {
   });
 };
 
-// ====================== this is a function for loading effect to fetch data =================
-
-const show_loading = () => {
-  load_more.classList.add("disable");
-};
-
-const hide_loading = () => {
-  load_more.classList.remove("disable");
-};
-
 // ====================== this is a function for get images form api =================
 
 const GetImages = (api_URL) => {
-  show_loading();
+  load_more.classList.add("disable");
   // Fetching images by api call with authorization header
   fetch(api_URL, {
     headers: { Authorization: api_key },
   })
     .then((res) => res.json())
     .then((data) => {
+      load_more.classList.remove("disable");
       Generate_HTML(data.photos);
-      hide_loading();
     });
 };
 

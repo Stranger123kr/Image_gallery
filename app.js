@@ -25,14 +25,14 @@ const Generate_HTML = (images) => {
 // ====================== this is a function for get images form api =================
 
 const GetImages = (api_URL) => {
-  load_more.classList.add("disable");
+  load_more.classList.add("disable"); //this is a loader for loading effect
   // Fetching images by api call with authorization header
   fetch(api_URL, {
     headers: { Authorization: api_key },
   })
     .then((res) => res.json())
     .then((data) => {
-      load_more.classList.remove("disable");
+      load_more.classList.remove("disable"); //this is a loader for loading effect
       Generate_HTML(data.photos);
     });
 };

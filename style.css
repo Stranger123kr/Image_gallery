@@ -248,5 +248,8 @@ header .buttons i:last-child {
 
 /* ======================= This is a media query ======================= */
 
-/* @media (max-width: 576px) {
-} */
+@media (max-width: 576px) {
+  .gallery .load_more {
+    display: none;
+  }
+}

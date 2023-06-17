@@ -28,8 +28,8 @@ i {
 
 #scroll_top_up {
   position: fixed;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 4rem;
   background: #fff;
   top: 50%;
@@ -298,6 +298,10 @@ header .buttons i:last-child {
 
   .search p {
     text-align: left;
+  }
+
+  #scroll_top_up:hover {
+    opacity: 0.4;
   }
 }
 

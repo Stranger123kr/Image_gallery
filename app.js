@@ -9,8 +9,21 @@ const load_more = document.querySelector(".load_more");
 const scroll_top_up = document.querySelector("#scroll_top_up");
 const search_box = document.querySelector(".search_box input");
 
-const downloading = (img_url) => {
-  console.log(img_url);
+// -------------- This is a function for download images form api -----------------
+
+const downloading = async (img_url, img_info) => {
+  try {
+    await fetch(img_url)
+      .then((res) => res.blob())
+      .then((file) => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(file);
+        link.download = img_info;
+        link.click();
+      });
+  } catch (error) {
+    alert(`Got some error when getting a image! ${error}`);
+  }
 };
 
 // ====================== this is a function for iterate for very images and other details  =================
@@ -24,7 +37,7 @@ const Generate_HTML = (images) => {
             <i class="uil uil-camera"></i>
             <span>${img.photographer}</span>
           </div>
-          <button onclick="downloading('${img.src.large2x}')">
+          <button onclick="downloading('${img.src.large2x}','${img.photographer}')">
             <i class="uil uil-import"></i>
           </button>
         </div>
@@ -47,7 +60,7 @@ const GetImages = async (api_URL) => {
         load_more.classList.remove("disable"); //this is a loader for loading effect
       });
   } catch (error) {
-    console.log("got some error when fetching a data ");
+    alert(`Got some error when fetching a data form api! ${error}`);
   }
 };
 

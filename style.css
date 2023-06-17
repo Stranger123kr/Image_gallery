@@ -192,11 +192,10 @@ i {
 .gallery .load_more {
   display: block;
   padding: 1.1rem 1.1rem;
-  border: 3px solid #fff;
-  border-top: 3px solid #545454;
-  border-right: 3px solid #545454;
+  border: 2px solid #ccc;
+  border-top: 2px solid #545454;
   border-radius: 50%;
-  animation: loading 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+  animation: loading 1s linear infinite;
   background: #fff;
   margin: 2.1rem auto;
   visibility: hidden;
@@ -290,8 +289,26 @@ header .buttons i:last-child {
 
 @media (max-width: 768px) {
   .images .card .details {
+    bottom: 0;
+    padding: 1rem 0.8rem;
+  }
+
+  .card .details .photographer span {
+    /* font-size: 0.7rem; */
     display: none;
   }
+
+  .photographer i {
+    /* font-size: 1.1rem;
+    margin-right: 0.4rem; */
+    display: none;
+  }
+
+  .card .details button {
+    padding: 0.1rem 0.3rem;
+    background: #fff;
+  }
+
   .search .content {
     flex-basis: 80%;
   }

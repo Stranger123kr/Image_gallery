@@ -1,7 +1,7 @@
 const api_key = "H7KKJdfwgRTFmX6Xv5AkctNMBWi8Z3zwE9MHKovzogBFPc53XfbWQelq ";
 let perPage = 9;
 let currentPage = 1;
-let scrolling = 800;
+let scrolling = -800;
 let search_img = null;
 
 const imagesWrapper = document.querySelector(".images");
@@ -77,12 +77,11 @@ window.addEventListener("scroll", () => {
 
   // this is a Infinity scroll effect for get data -----------
 
-  if (
-    window.document.documentElement.offsetHeight -
-      window.innerHeight -
-      scrolling++ <=
-    window.scrollY
-  ) {
+  const endOf_the_page =
+    window.innerHeight + window.pageYOffset >=
+    document.body.offsetHeight + scrolling;
+
+  if (endOf_the_page) {
     LoadMore_Images();
   }
 });

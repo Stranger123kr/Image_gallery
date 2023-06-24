@@ -195,7 +195,7 @@ i {
   border: 2px solid #ccc;
   border-top: 2px solid #545454;
   border-radius: 50%;
-  animation: loading 1s linear infinite;
+  animation: loading 0.5s linear infinite;
   background: #fff;
   margin: 2.1rem auto;
   visibility: hidden;
@@ -334,9 +334,9 @@ header .buttons i:last-child {
     column-gap: 0.3rem;
   }
 
-  .gallery .load_more {
+  /* .gallery .load_more {
     display: none;
-  }
+  } */
 
   #scroll_top_up {
     right: 1rem;

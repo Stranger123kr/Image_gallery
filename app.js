@@ -31,7 +31,7 @@ const downloading = async (img_url, img_info) => {
 const Generate_HTML = (images) => {
   // making li of all fetched images and adding them to the existing image warper
   console.log(images, currentPage++);
-  if (images === length) {
+  if (images.length === 0) {
     end_page.classList.add("show");
     load_more.style.display = "none";
   }

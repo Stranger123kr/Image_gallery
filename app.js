@@ -31,7 +31,7 @@ const Generate_HTML = (images) => {
   // making li of all fetched images and adding them to the existing image warper
   images.forEach((img) => {
     imagesWrapper.innerHTML += `<li class="card">
-      <img src=${img.src.large2x} alt="img">
+      <img src=${img.src.large2x} loading='lazy' alt="img">
         <div class="details">
           <div class="photographer">
             <i class="uil uil-camera"></i>

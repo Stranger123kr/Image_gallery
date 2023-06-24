@@ -8,6 +8,7 @@ const imagesWrapper = document.querySelector(".images");
 const load_more = document.querySelector(".load_more");
 const scroll_top_up = document.querySelector("#scroll_top_up");
 const search_box = document.querySelector(".search_box input");
+const end_page = document.querySelector("#end");
 
 // -------------- This is a function for download images form api -----------------
 
@@ -22,13 +23,18 @@ const downloading = async (img_url, img_info) => {
         link.click();
       });
   } catch (error) {
-    alert(`Got some error when getting a image! ${error}`);
+    console.log(`Got some error when getting a image! ${error}`);
   }
 };
 
 // ====================== this is a function for iterate for very images and other details  =================
 const Generate_HTML = (images) => {
   // making li of all fetched images and adding them to the existing image warper
+  console.log(images, currentPage++);
+  if (images === length) {
+    end_page.classList.add("show");
+    load_more.style.display = "none";
+  }
   images.forEach((img) => {
     imagesWrapper.innerHTML += `<li class="card">
       <img src=${img.src.large2x} loading='lazy' alt="img">
@@ -60,7 +66,7 @@ const GetImages = async (api_URL) => {
         load_more.classList.remove("disable"); //this is a loader for loading effect
       });
   } catch (error) {
-    alert(`Got some error when fetching a data form api! ${error}`);
+    console.log(`Got some error when fetching a data form api! ${error}`);
   }
 };
 

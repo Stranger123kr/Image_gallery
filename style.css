@@ -64,6 +64,25 @@ i {
   background-clip: content-box;
 }
 
+/* ======================= This is show message for no images  ======================= */
+#end {
+  display: none;
+}
+
+#end.show {
+  display: block;
+  margin: 10px auto;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background: #000;
+  text-align: center;
+  width: 25rem;
+  border-radius: 3rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  word-spacing: 0.2rem;
+}
+
 /* ======================= This is a search part ======================= */
 
 .search {
@@ -334,14 +353,22 @@ header .buttons i:last-child {
     column-gap: 0.3rem;
   }
 
-  /* .gallery .load_more {
-    display: none;
-  } */
-
   #scroll_top_up {
     right: 1rem;
     width: 1.5rem;
     height: 1.5rem;
+  }
+  #end.show {
+    display: block;
+    margin: 10px auto;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #000;
+    text-align: center;
+    width: 15rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    padding: 0.3rem;
   }
 }
 

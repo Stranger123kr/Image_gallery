@@ -9,6 +9,9 @@ const load_more = document.querySelector(".load_more");
 const scroll_top_up = document.querySelector("#scroll_top_up");
 const search_box = document.querySelector(".search_box input");
 const end_page = document.querySelector("#end");
+const light_box = document.querySelector(".light_box");
+const close_btn = document.querySelector(".uil-times");
+const downloaded_img = document.querySelector(".uil-import");
 
 // -------------- This is a function for download images form api -----------------
 
@@ -27,28 +30,45 @@ const downloading = async (img_url, img_info) => {
   }
 };
 
+// ====================== this is a function of light_box =================
+
+const Show_lightbox = (img, name) => {
+  // showing light box content
+  light_box.classList.add("show");
+  light_box.querySelector("img").src = img;
+  downloaded_img.setAttribute("data-img", img);
+  downloaded_img.setAttribute("data-name", name);
+  light_box.querySelector("span").innerText = name;
+  document.body.style.overflow = "hidden";
+};
+
+const hide_lightbox = () => {
+  light_box.classList.remove("show");
+  document.body.style.overflow = "auto";
+};
+
 // ====================== this is a function for iterate for very images and other details  =================
 const Generate_HTML = (images) => {
   // making li of all fetched images and adding them to the existing image warper
-  console.log(images, currentPage++);
   if (images.length === 0) {
     end_page.classList.add("show");
     load_more.style.display = "none";
-  }
-  images.forEach((img) => {
-    imagesWrapper.innerHTML += `<li class="card">
+  } else {
+    images.forEach((img) => {
+      imagesWrapper.innerHTML += `<li class="card" onclick="Show_lightbox('${img.src.large2x}','${img.photographer}')">
       <img src=${img.src.large2x} loading='lazy' alt="img">
         <div class="details">
           <div class="photographer">
             <i class="uil uil-camera"></i>
             <span>${img.photographer}</span>
           </div>
-          <button onclick="downloading('${img.src.large2x}','${img.photographer}')">
+          <button onclick="downloading('${img.src.large2x}','${img.photographer}');event.stopPropagation()">
             <i class="uil uil-import"></i>
           </button>
         </div>
     </li>`;
-  });
+    });
+  }
 };
 
 // ====================== this is a function for get images form api =================
@@ -125,3 +145,9 @@ const local_search = (e) => {
 };
 
 search_box.addEventListener("keyup", local_search);
+
+// =================== this close btn of light_box ==============
+close_btn.addEventListener("click", hide_lightbox);
+downloaded_img.addEventListener("click", (e) =>
+  downloading(e.target.dataset.img, e.target.dataset.name)
+);
